@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+   --background-hero: #101010;
+   --background: #0e0e0e;
+   --foreground: #f1f1f1;
+   --muted-foreground: #999;
+   --accent: white;
+
+   --primary: #3f74ff;
+   --secondary: #ff843f;
+}
+
+body {
+   color: var(--foreground);
+   background: var(--background);
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes float {
+   0% {
+      transform: translate(0px);
+   }
+
+   50% {
+      transform: translateY(-20px);
+   }
+
+   100% {
+      transform: translateY(0px);
+   }
+}
+
+@keyframes float2 {
+   0% {
+      transform: translate(0px);
+   }
+
+   50% {
+      transform: translateY(20px);
+   }
+   100% {
+      transform: translateY(0px);
+   }
+}
+
+.floating-element {
+   transform: translateY(0px);
+   animation: float 5s linear infinite;
+}
+
+.floating-element-2 {
+   transform: translateY(0px);
+   animation: float2 5s linear infinite;
+}
+
+@keyframes revealFromBottom {
+   0% {
+      clip-path: inset(100% 0 0 0); /* Hidden from bottom to top */
+   }
+   100% {
+      clip-path: inset(0 0 0 0); /* Fully revealed */
+   }
+}
+
+.reveal-animation {
+   clip-path: inset(100% 0 0 0);
+   animation: revealFromBottom 0.7s cubic-bezier(0.6, 0, 0.9, 1) 0.1s forwards;
+}
+
+.ig-block:hover {
+   .ig-tag {
+      opacity: 1;
+   }
+}
